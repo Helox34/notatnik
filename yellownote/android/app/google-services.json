@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "298400932340",
+    "project_id": "yellownote-44700",
+    "storage_bucket": "yellownote-44700.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298400932340:android:ed287279becd8a5fed59a1",
+        "android_client_info": {
+          "package_name": "com.yellownote.yellownote"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298400932340-9020shm8o5o6oe5po8v2pbfk4r6j5ucl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKoiZiVbplbahi96mYU9-sHWgm2q3E2Eg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298400932340-9020shm8o5o6oe5po8v2pbfk4r6j5ucl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
