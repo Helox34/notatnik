@@ -15,9 +15,15 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   // Initialize Firebase
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  // Initialize Firebase with timeout to prevent hang
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    ).timeout(const Duration(seconds: 3));
+  } catch (e) {
+    debugPrint('Firebase initialization failed or timed out: $e');
+    // Continue anyway, as we use local storage for data
+  }
   
   // Initialize Date Formatting
   await initializeDateFormatting('pl_PL', null);

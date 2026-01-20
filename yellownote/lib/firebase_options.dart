@@ -46,9 +46,9 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDemoKeyPleaseReplaceWithRealKey',
-    appId: '1:000000000000:android:0000000000000000000000',
-    messagingSenderId: '000000000000',
+    apiKey: 'AIzaSyBKoiZiVbplbahi96mYU9-sHWgm2q3E2Eg',
+    appId: '1:298400932340:android:ed287279becd8a5fed59a1',
+    messagingSenderId: '298400932340',
     projectId: 'yellownote-44700',
     storageBucket: 'yellownote-44700.firebasestorage.app',
   );

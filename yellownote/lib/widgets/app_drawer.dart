@@ -4,6 +4,10 @@ import '../providers/auth_provider.dart';
 import '../theme/app_colors.dart';
 import '../screens/settings_screen.dart';
 import '../screens/login_screen.dart';
+import '../screens/projects/projects_screen.dart';
+import '../screens/diary/diary_screen.dart';
+import '../screens/lists/lists_screen.dart';
+import '../screens/notes/notes_screen.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -51,15 +55,19 @@ class AppDrawer extends StatelessWidget {
               title: 'Projekty',
               onTap: () {
                 Navigator.of(context).pop();
-                // TODO: Navigate to projects
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const ProjectsScreen()),
+                );
               },
             ),
             _DrawerItem(
               icon: Icons.book,
-              title: 'Dzienniczek',
+              title: 'Dziennik',
               onTap: () {
                 Navigator.of(context).pop();
-                // TODO: Navigate to diary
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const DiaryScreen()),
+                );
               },
             ),
             _DrawerItem(
@@ -67,7 +75,9 @@ class AppDrawer extends StatelessWidget {
               title: 'Listy',
               onTap: () {
                 Navigator.of(context).pop();
-                // TODO: Navigate to lists
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const ListsScreen()),
+                );
               },
             ),
             _DrawerItem(
@@ -75,7 +85,9 @@ class AppDrawer extends StatelessWidget {
               title: 'Notatnik',
               onTap: () {
                 Navigator.of(context).pop();
-                // TODO: Navigate to notes
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const NotesScreen()),
+                );
               },
             ),
 
