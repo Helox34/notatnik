@@ -6,6 +6,7 @@ import 'projects/projects_screen.dart';
 import 'diary/diary_screen.dart';
 import 'lists/lists_screen.dart';
 import 'notes/notes_screen.dart';
+import 'reminders/reminders_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -17,13 +18,19 @@ class OnboardingScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu, color: AppColors.darkNavy),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
+          builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: isDark ? Colors.white : AppColors.darkNavy,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
         ),
       ),
-      drawer: const AppDrawer(),
+      drawer: const AppDrawer(currentRoute: 'home'),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -116,6 +123,21 @@ class OnboardingScreen extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (_) => const NotesScreen(),
+                          ),
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    _PillButton(
+                      icon: Icons.notifications_active_rounded,
+                      title: 'Przypomnienia',
+                      subtitle: 'Zarządzaj przypomnieniami',
+                      color: const Color(0xFFFFF3E0),
+                      iconColor: const Color(0xFFFF9800),
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const RemindersScreen(),
                           ),
                         );
                       },

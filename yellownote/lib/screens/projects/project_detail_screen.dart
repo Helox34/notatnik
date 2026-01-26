@@ -268,14 +268,21 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                 ),
                 
                 if (projectLists.isEmpty)
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Center(
-                      child: Text(
-                        'Brak list w tym projekcie',
-                        style: TextStyle(color: AppColors.darkGray),
-                      ),
-                    ),
+                  Builder(
+                    builder: (context) {
+                      final isDark = Theme.of(context).brightness == Brightness.dark;
+                      return Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Center(
+                          child: Text(
+                            'Brak list w tym projekcie',
+                            style: TextStyle(
+                              color: isDark ? Colors.grey[400] : AppColors.darkGray,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   )
                 else
                   ...projectLists.map((list) => _ListTile(
@@ -320,14 +327,21 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                 ),
 
                 if (projectNotes.isEmpty)
-                  Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Center(
-                      child: Text(
-                        'Brak notatek w tym projekcie',
-                        style: TextStyle(color: AppColors.darkGray),
-                      ),
-                    ),
+                  Builder(
+                    builder: (context) {
+                      final isDark = Theme.of(context).brightness == Brightness.dark;
+                      return Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Center(
+                          child: Text(
+                            'Brak notatek w tym projekcie',
+                            style: TextStyle(
+                              color: isDark ? Colors.grey[400] : AppColors.darkGray,
+                            ),
+                          ),
+                        ),
+                      );
+                    },
                   )
                 else
                   ...projectNotes.map((note) => _NoteTile(
@@ -385,11 +399,19 @@ class _StatChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 16),
+          Icon(
+            icon,
+            size: 16,
+            color: AppColors.darkNavy,
+          ),
           const SizedBox(width: 6),
           Text(
             label,
-            style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+            style: const TextStyle(
+              fontSize: 13,
+              fontWeight: FontWeight.w600,
+              color: AppColors.darkNavy,
+            ),
           ),
         ],
       ),

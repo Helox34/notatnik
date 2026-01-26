@@ -45,7 +45,10 @@ class YellowNoteApp extends StatelessWidget {
         ChangeNotifierProvider(create:  (_) => AuthProvider()),
         ChangeNotifierProvider(create: (context) {
           final provider = DataProvider();
-          provider.initialize(); // Load data from storage
+          // Load local data first
+          provider.initialize();
+          // Note: Automatic sync is disabled to prevent login issues
+          // Users can manually sync using the "Synchronizuj teraz" button
           return provider;
         }),
       ],

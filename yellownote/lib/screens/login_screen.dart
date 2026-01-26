@@ -200,7 +200,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     const Text(
-                      '\nYellowNote.',
+                      ' YellowNote.',
                       style: TextStyle(fontSize: 12),
                     ),
                   ],

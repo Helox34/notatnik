@@ -76,24 +76,6 @@ class SettingsScreen extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            child: ElevatedButton(
-              onPressed: () {
-                // TODO: Sync devices
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Funkcja synchronizacji trwająca implementacja...'),
-                    backgroundColor: AppColors.yellow,
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(vertical: 14),
-              ),
-              child: const Text('Połącz urządzenia'),
-            ),
-          ),
 
           const SizedBox(height: 24),
 

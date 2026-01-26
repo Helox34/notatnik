@@ -4,6 +4,7 @@ import '../../providers/data_provider.dart';
 import '../../theme/app_colors.dart';
 import 'list_detail_screen.dart';
 import '../../models/list_model.dart' as model;
+import '../../widgets/app_drawer.dart';
 
 class ListsScreen extends StatelessWidget {
   const ListsScreen({super.key});
@@ -13,7 +14,20 @@ class ListsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Listy'),
+        leading: Builder(
+          builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: isDark ? Colors.white : null,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
       ),
+      drawer: const AppDrawer(currentRoute: 'lists'),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddListDialog(context),
         backgroundColor: AppColors.yellow,

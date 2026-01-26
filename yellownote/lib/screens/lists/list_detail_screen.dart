@@ -89,18 +89,23 @@ class _ListDetailScreenState extends State<ListDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: TextField(
-          controller: _titleController,
-          style: const TextStyle(
-            fontSize: 20, 
-            fontWeight: FontWeight.bold,
-            color: AppColors.darkNavy,
-          ),
-          decoration: const InputDecoration(
-            hintText: 'Nazwa listy',
-            border: InputBorder.none,
-          ),
-          onChanged: (_) => _saveList(),
+        title: Builder(
+          builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return TextField(
+              controller: _titleController,
+              style: TextStyle(
+                fontSize: 20, 
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : AppColors.darkNavy,
+              ),
+              decoration: const InputDecoration(
+                hintText: 'Nazwa listy',
+                border: InputBorder.none,
+              ),
+              onChanged: (_) => _saveList(),
+            );
+          },
         ),
         actions: [
           IconButton(

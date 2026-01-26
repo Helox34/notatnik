@@ -4,6 +4,7 @@ import '../../providers/data_provider.dart';
 import '../../theme/app_colors.dart';
 import '../../models/project.dart';
 import 'project_detail_screen.dart';
+import '../../widgets/app_drawer.dart';
 
 class ProjectsScreen extends StatelessWidget {
   const ProjectsScreen({super.key});
@@ -13,7 +14,20 @@ class ProjectsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Projekty'),
+        leading: Builder(
+          builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: isDark ? Colors.white : null,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
       ),
+      drawer: const AppDrawer(currentRoute: 'projects'),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddProjectDialog(context),
         backgroundColor: AppColors.yellow,
@@ -186,23 +200,76 @@ class _ProjectCard extends StatelessWidget {
                       ],
                     ),
                   ),
+                  IconButton(
+                    icon: const Icon(Icons.delete, color: AppColors.error),
+                    onPressed: () async {
+                      final confirm = await showDialog<bool>(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text('Usuń projekt'),
+                          content: Text('Czy na pewno chcesz usunąć projekt "${project.title}"?'),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, false),
+                              child: const Text('Anuluj'),
+                            ),
+                            ElevatedButton(
+                              onPressed: () => Navigator.pop(context, true),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.error,
+                                foregroundColor: Colors.white,
+                              ),
+                              child: const Text('Usuń'),
+                            ),
+                          ],
+                        ),
+                      );
+                      if (confirm == true) {
+                        Provider.of<DataProvider>(context, listen: false)
+                            .deleteProject(project.id);
+                      }
+                    },
+                  ),
                 ],
               ),
               const SizedBox(height: 12),
               Row(
                 children: [
-                  Icon(Icons.list, size: 16, color: AppColors.darkGray),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${project.totalLists} list',
-                    style: TextStyle(fontSize: 12, color: AppColors.darkGray),
-                  ),
-                  const SizedBox(width: 16),
-                  Icon(Icons.note, size: 16, color: AppColors.darkGray),
-                  const SizedBox(width: 4),
-                  Text(
-                    '${project.totalNotes} notatek',
-                    style: TextStyle(fontSize: 12, color: AppColors.darkGray),
+                  Builder(
+                    builder: (context) {
+                      final isDark = Theme.of(context).brightness == Brightness.dark;
+                      return Row(
+                        children: [
+                          Icon(
+                            Icons.list,
+                            size: 16,
+                            color: isDark ? Colors.grey[400] : AppColors.darkGray,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            '${project.totalLists} list',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: isDark ? Colors.grey[400] : AppColors.darkGray,
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+                          Icon(
+                            Icons.note,
+                            size: 16,
+                            color: isDark ? Colors.grey[400] : AppColors.darkGray,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            '${project.totalNotes} notatek',
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: isDark ? Colors.grey[400] : AppColors.darkGray,
+                            ),
+                          ),
+                        ],
+                      );
+                    },
                   ),
                 ],
               ),

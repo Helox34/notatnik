@@ -5,6 +5,7 @@ import '../../providers/data_provider.dart';
 import '../../theme/app_colors.dart';
 import '../../models/diary_entry.dart';
 import 'diary_entry_detail_screen.dart';
+import '../../widgets/app_drawer.dart';
 
 class DiaryScreen extends StatelessWidget {
   const DiaryScreen({super.key});
@@ -14,7 +15,20 @@ class DiaryScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dziennik'),
+        leading: Builder(
+          builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: isDark ? Colors.white : null,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
       ),
+      drawer: const AppDrawer(currentRoute: 'diary'),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddEntryDialog(context),
         backgroundColor: AppColors.yellow,

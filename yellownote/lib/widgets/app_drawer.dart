@@ -4,13 +4,17 @@ import '../providers/auth_provider.dart';
 import '../theme/app_colors.dart';
 import '../screens/settings_screen.dart';
 import '../screens/login_screen.dart';
+import '../screens/onboarding_screen.dart';
 import '../screens/projects/projects_screen.dart';
 import '../screens/diary/diary_screen.dart';
 import '../screens/lists/lists_screen.dart';
 import '../screens/notes/notes_screen.dart';
+import '../screens/reminders/reminders_screen.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
+  final String? currentRoute;
+  
+  const AppDrawer({super.key, this.currentRoute});
 
   @override
   Widget build(BuildContext context) {
@@ -47,12 +51,19 @@ class AppDrawer extends StatelessWidget {
             _DrawerItem(
               icon: Icons.home,
               title: 'Pulpit',
-              isSelected: true,
-              onTap: () => Navigator.of(context).pop(),
+              isSelected: currentRoute == 'home' || currentRoute == null,
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (_) => const OnboardingScreen()),
+                  (route) => false,
+                );
+              },
             ),
             _DrawerItem(
               icon: Icons.folder,
               title: 'Projekty',
+              isSelected: currentRoute == 'projects',
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
@@ -63,6 +74,7 @@ class AppDrawer extends StatelessWidget {
             _DrawerItem(
               icon: Icons.book,
               title: 'Dziennik',
+              isSelected: currentRoute == 'diary',
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
@@ -73,6 +85,7 @@ class AppDrawer extends StatelessWidget {
             _DrawerItem(
               icon: Icons.list,
               title: 'Listy',
+              isSelected: currentRoute == 'lists',
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
@@ -83,6 +96,7 @@ class AppDrawer extends StatelessWidget {
             _DrawerItem(
               icon: Icons.note,
               title: 'Notatnik',
+              isSelected: currentRoute == 'notes',
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.of(context).push(
@@ -90,69 +104,19 @@ class AppDrawer extends StatelessWidget {
                 );
               },
             ),
+            _DrawerItem(
+              icon: Icons.notification_important,
+              title: 'Przypomnienia',
+              isSelected: currentRoute == 'reminders',
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const RemindersScreen()),
+                );
+              },
+            ),
 
             const Spacer(),
-
-            // Sync Section
-            Container(
-              margin: const EdgeInsets.all(16),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.3),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: const [
-                      Icon(Icons.sync, size: 18, color: AppColors.darkNavy),
-                      SizedBox(width: 8),
-                      Text(
-                        'Synchronizacja',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.darkNavy,
-                        ),
-                      ),
-                      Spacer(),
-                      Icon(Icons.error_outline, size: 16, color: Colors.red),
-                    ],
-                  ),
-                  const SizedBox(height: 4),
-                  const Text(
-                    'Nie zsynchronizowano',
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: AppColors.darkNavy,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        // TODO: Sync action
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.darkNavy,
-                        foregroundColor: Colors.white,
-                        elevation: 0,
-                        padding: const EdgeInsets.symmetric(vertical: 8),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                      ),
-                      child: const Text(
-                        'Synchronizuj teraz',
-                        style: TextStyle(fontSize: 13),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
 
             // Settings
             _DrawerItem(

@@ -4,6 +4,7 @@ import '../../providers/data_provider.dart';
 import '../../theme/app_colors.dart';
 import '../../models/note.dart';
 import 'note_detail_screen.dart';
+import '../../widgets/app_drawer.dart';
 
 class NotesScreen extends StatelessWidget {
   const NotesScreen({super.key});
@@ -13,7 +14,20 @@ class NotesScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Notatnik'),
+        leading: Builder(
+          builder: (context) {
+            final isDark = Theme.of(context).brightness == Brightness.dark;
+            return IconButton(
+              icon: Icon(
+                Icons.menu,
+                color: isDark ? Colors.white : null,
+              ),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
       ),
+      drawer: const AppDrawer(currentRoute: 'notes'),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddNoteDialog(context),
         backgroundColor: AppColors.yellow,
