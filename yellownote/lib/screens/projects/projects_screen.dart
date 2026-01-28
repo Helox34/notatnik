@@ -6,8 +6,15 @@ import '../../models/project.dart';
 import 'project_detail_screen.dart';
 import '../../widgets/app_drawer.dart';
 
-class ProjectsScreen extends StatelessWidget {
+class ProjectsScreen extends StatefulWidget {
   const ProjectsScreen({super.key});
+
+  @override
+  State<ProjectsScreen> createState() => _ProjectsScreenState();
+}
+
+class _ProjectsScreenState extends State<ProjectsScreen> {
+  bool _showArchived = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +33,17 @@ class ProjectsScreen extends StatelessWidget {
             );
           },
         ),
+        actions: [
+          IconButton(
+            icon: Icon(_showArchived ? Icons.unarchive : Icons.archive),
+            tooltip: _showArchived ? 'Ukryj archiwum' : 'Pokaż archiwum',
+            onPressed: () {
+              setState(() {
+                _showArchived = !_showArchived;
+              });
+            },
+          ),
+        ],
       ),
       drawer: const AppDrawer(currentRoute: 'projects'),
       floatingActionButton: FloatingActionButton.extended(
@@ -41,7 +59,11 @@ class ProjectsScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
 
-          final projects = dataProvider.projects;
+          // Filter projects based on archive toggle
+          final allProjects = dataProvider.projects;
+          final projects = _showArchived
+              ? allProjects.where((p) => p.isArchived).toList()
+              : allProjects.where((p) => !p.isArchived).toList();
 
           if (projects.isEmpty) {
             return Center(

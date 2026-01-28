@@ -149,11 +149,17 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               icon: const Icon(Icons.close),
               onPressed: _toggleSelectionMode,
             ),
-          ] else
+          ] else ...[
+            IconButton(
+              icon: Icon(widget.project.isArchived ? Icons.unarchive : Icons.archive),
+              tooltip: widget.project.isArchived ? 'Przywróć z archiwum' : 'Archiwizuj',
+              onPressed: () => _toggleArchive(context),
+            ),
             IconButton(
               icon: const Icon(Icons.edit),
               onPressed: () => _showEditProjectDialog(context, Provider.of<DataProvider>(context, listen: false)),
             ),
+          ],
         ],
       ),
       body: Consumer<DataProvider>(

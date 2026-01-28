@@ -35,6 +35,12 @@ class Project extends HiveObject {
   @HiveField(9)
   late String userId;
 
+  @HiveField(10)
+  late bool isArchived;
+
+  @HiveField(11)
+  late int colorValue;
+
   Project({
     String? id,
     required this.title,
@@ -46,6 +52,8 @@ class Project extends HiveObject {
     DateTime? createdAt,
     DateTime? updatedAt,
     this.userId = '',
+    this.isArchived = false,
+    this.colorValue = 0xFFFFC107,
   }) {
     this.id = id ?? const Uuid().v4();
     this.createdAt = createdAt ?? DateTime.now();
@@ -72,6 +80,8 @@ class Project extends HiveObject {
     DateTime? createdAt,
     DateTime? updatedAt,
     String? userId,
+    bool? isArchived,
+    int? colorValue,
   }) {
     return Project(
       id: id ?? this.id,
@@ -84,6 +94,8 @@ class Project extends HiveObject {
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       userId: userId ?? this.userId,
+      isArchived: isArchived ?? this.isArchived,
+      colorValue: colorValue ?? this.colorValue,
     );
   }
 
@@ -99,6 +111,8 @@ class Project extends HiveObject {
       'createdAt': createdAt.toIso8601String(),
       'updatedAt': updatedAt.toIso8601String(),
       'userId': userId,
+      'isArchived': isArchived,
+      'colorValue': colorValue,
     };
   }
 
@@ -114,6 +128,8 @@ class Project extends HiveObject {
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       userId: json['userId'] as String? ?? '',
+      isArchived: json['isArchived'] as bool? ?? false,
+      colorValue: json['colorValue'] as int? ?? 0xFFFFC107,
     );
   }
 }
