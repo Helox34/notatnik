@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../providers/data_provider.dart';
 import '../../theme/app_colors.dart';
@@ -54,8 +54,8 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Usuń wybrane elementy'),
-        content: Text('Czy na pewno chcesz usunąć ${_selectedListIds.length + _selectedNoteIds.length} element(ów)?'),
+        title: const Text('UsuĹ„ wybrane elementy'),
+        content: Text('Czy na pewno chcesz usunÄ…Ä‡ ${_selectedListIds.length + _selectedNoteIds.length} element(Ăłw)?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
@@ -67,7 +67,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               backgroundColor: AppColors.error,
               foregroundColor: Colors.white,
             ),
-            child: const Text('Usuń'),
+            child: const Text('UsuĹ„'),
           ),
         ],
       ),
@@ -150,11 +150,11 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
               onPressed: _toggleSelectionMode,
             ),
           ] else ...[
-            IconButton(
+            /*IconButton(
               icon: Icon(widget.project.isArchived ? Icons.unarchive : Icons.archive),
-              tooltip: widget.project.isArchived ? 'Przywróć z archiwum' : 'Archiwizuj',
+              tooltip: widget.project.isArchived ? 'PrzywrĂłÄ‡ z archiwum' : 'Archiwizuj',
               onPressed: () => _toggleArchive(context),
-            ),
+            ),*/
             IconButton(
               icon: const Icon(Icons.edit),
               onPressed: () => _showEditProjectDialog(context, Provider.of<DataProvider>(context, listen: false)),
@@ -210,7 +210,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Text(
-                                  'Postęp zadań',
+                                  'PostÄ™p zadaĹ„',
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
@@ -260,7 +260,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                             IconButton(
                               icon: const Icon(Icons.edit_square, color: AppColors.darkGray),
                               onPressed: _toggleSelectionMode,
-                              tooltip: 'Zarządzaj',
+                              tooltip: 'ZarzÄ…dzaj',
                             ),
                             TextButton.icon(
                               onPressed: () => _showAddListDialog(context),
@@ -319,7 +319,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                             IconButton(
                               icon: const Icon(Icons.edit_square, color: AppColors.darkGray),
                               onPressed: _toggleSelectionMode,
-                              tooltip: 'Zarządzaj',
+                              tooltip: 'ZarzÄ…dzaj',
                             ),
                             TextButton.icon(
                               onPressed: () => _showAddNoteDialog(context),
@@ -380,6 +380,26 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
         builder: (_) => NoteDetailScreen(projectId: widget.project.id),
       ),
     );
+  }
+
+  Future<void> _toggleArchive(BuildContext context) async {
+    final dataProvider = Provider.of<DataProvider>(context, listen: false);
+    final updatedProject = widget.project.copyWith(
+      isArchived: !widget.project.isArchived,
+    );
+    await dataProvider.updateProject(updatedProject);
+    
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(widget.project.isArchived
+            ? 'Projekt przywrócony z archiwum'
+            : 'Projekt zarchiwizowany'),
+          backgroundColor: AppColors.yellow,
+        ),
+      );
+      Navigator.pop(context);
+    }
   }
 }
 
@@ -483,7 +503,7 @@ class _ListTile extends StatelessWidget {
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      '${list.completedCount}/${list.totalCount} ukończone',
+                      '${list.completedCount}/${list.totalCount} ukoĹ„czone',
                       style: TextStyle(fontSize: 12, color: AppColors.darkGray),
                     ),
                   ],

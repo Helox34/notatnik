@@ -1,0 +1,17 @@
+﻿Running Gradle task 'bundleRelease'...                              5,0s
+flutter : Release app bundle failed to strip debug symbol
+s from native libraries.
+At line:1 char:1
++ flutter build appbundle --release 2>&1 | Out-File -File
+Path build_dia ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Release app 
+    bun...tive libraries.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Please run flutter doctor and ensure that the Android too
+lchain does not
+report any issues.
+
+Otherwise, file an issue at https://github.com/flutter/fl
+utter/issues.

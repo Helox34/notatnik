@@ -1,0 +1,161 @@
+﻿.\gradlew : WARNING: A
+ restricted method in 
+java.lang.System has b
+een called
+At line:1 char:1
++ .\gradlew bundleRele
+ase 2>&1 | Out-File -F
+ilePath ..\build_error
+2.txt ...
++ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: (WARNING: A   
+  rest...has been     
+called:String) []    ,
+ RemoteException
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+WARNING: java.lang.Sys
+tem::load has been cal
+led by net.rubygrapefr
+uit.platform.internal.
+NativeLibraryLoader in
+ an unnamed module (fi
+le:/C:/Users/Bartek%20
+Piwowarczyk/.gradle/wr
+apper/dists/gradle-8.1
+4-all/c2qonpi39x1mddn7
+hk5gh9iqj/gradle-8.14/
+lib/native-platform-0.
+22-milestone-28.jar)
+WARNING: Use --enable-
+native-access=ALL-UNNA
+MED to avoid a warning
+ for callers in this m
+odule
+WARNING: Restricted me
+thods will be blocked 
+in a future release un
+less native access is 
+enabled
+
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:compileKotlin UP-TO-DATE
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources UP-TO-DATE
+> Task :gradle:classes UP-TO-DATE
+> Task :gradle:jar UP-TO-DATE
+
+> Configure project :app
+e: file:///C:/Users/Ba
+rtek%20Piwowarczyk/Doc
+uments/GitHub/notatnik
+/yellownote/android/ap
+p/build.gradle.kts:13:
+31: Unresolved referen
+ce: util
+e: file:///C:/Users/Ba
+rtek%20Piwowarczyk/Doc
+uments/GitHub/notatnik
+/yellownote/android/ap
+p/build.gradle.kts:15:
+34: Unresolved referen
+ce: io
+w: file:///C:/Users/Bartek%20Piwowarczyk/Documents/GitHub/notatnik/yellownote/android/app/build.gradle.kts:29:9: 'jvmTarget: String' is deprecated. Please migrate to the compilerOptions DSL. More details are here: https://kotl.in/u1r8ln
+w: file:///C:/Users/Bartek%20Piwowarczyk/Documents/GitHub/notatnik/yellownote/android/app/build.gradle.kts:45:55: No cast needed
+w: file:///C:/Users/Bartek%20Piwowarczyk/Documents/GitHub/notatnik/yellownote/android/app/build.gradle.kts:46:61: No cast needed
+w: file:///C:/Users/Bartek%20Piwowarczyk/Documents/GitHub/notatnik/yellownote/android/app/build.gradle.kts:48:65: No cast needed
+
+FAILURE: Build failed 
+with an exception.
+
+* Where:
+Build file 'C:\Users\B
+artek Piwowarczyk\Docu
+ments\GitHub\notatnik\
+yellownote\android\app
+\build.gradle.kts' lin
+e: 13
+
+* What went wrong:
+Script compilation err
+ors:
+
+  Line 13: val keystor
+eProperties = java.uti
+l.Properties()
+                      
+                   ^ U
+nresolved reference: u
+til
+
+  Line 15:     keystor
+eProperties.load(java.
+io.FileInputStream(key
+storePropertiesFile))
+                      
+                      
+^ Unresolved reference
+: io
+
+  Line 29:         jvm
+Target = JavaVersion.V
+ERSION_17.toString()
+                   ^ '
+jvmTarget: String' is 
+deprecated. Please mig
+rate to the compilerOp
+tions DSL. More detail
+s are here: https://ko
+tl.in/u1r8ln
+
+  Line 45:            
+ keyAlias = keystorePr
+operties["keyAlias"] a
+s String
+                      
+                      
+                     ^
+ No cast needed
+
+  Line 46:            
+ keyPassword = keystor
+eProperties["keyPasswo
+rd"] as String
+                      
+                      
+                      
+     ^ No cast needed
+
+  Line 48:            
+ storePassword = keyst
+oreProperties["storePa
+ssword"] as String
+                      
+                      
+                      
+         ^ No cast nee
+ded
+
+6 errors
+
+* Try:
+> Run with --stacktrac
+e option to get the st
+ack trace.
+> Run with --info or -
+-debug option to get m
+ore log output.
+> Run with --scan to g
+et full insights.
+> Get more help at htt
+ps://help.gradle.org.
+
+BUILD FAILED in 2s
+4 actionable tasks: 4 up-to-date
