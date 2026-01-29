@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/theme_provider.dart';
 import '../providers/auth_provider.dart';
 import '../theme/app_colors.dart';
+import '../utils/sample_data.dart';
 import 'login_screen.dart';
 import 'privacy_policy_screen.dart';
 import 'terms_of_service_screen.dart';
@@ -106,6 +107,41 @@ class SettingsScreen extends StatelessWidget {
             },
           ),
 
+          const SizedBox(height: 24),
+
+          // Developer Section
+          _SectionHeader(title: 'Deweloperskie'),
+          ListTile(
+            leading: const Icon(Icons.data_usage, color: AppColors.darkNavy),
+            title: const Text('Załaduj przykładowe dane'),
+            subtitle: const Text('Dodaje projekty, notatki i listy (do zrzutów ekranu)'),
+            onTap: () async {
+              final confirm = await showDialog<bool>(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Załadować dane?'),
+                  content: const Text('To doda przykładowe dane do Twojej aplikacji.'),
+                  actions: [
+                    TextButton(onPressed: () => Navigator.pop(context, false), child: const Text('Anuluj')),
+                    ElevatedButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      child: const Text('Załaduj'),
+                    ),
+                  ],
+                ),
+              );
+
+              if (confirm == true && context.mounted) {
+                await SampleDataGenerator.generate(context);
+                if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Dodano przykładowe dane!')),
+                  );
+                }
+              }
+            },
+          ),
+          
           const SizedBox(height: 24),
 
           // Account Section

@@ -1,0 +1,40 @@
+=== NAZWA APLIKACJI (max 30 znaków) ===
+Opcja 1: YellowNote
+Opcja 2: YellowNote - Notatki i Listy
+Opcja 3: YellowNote: Projekty i Zadania
+
+=== KRÓTKI OPIS (max 80 znaków) ===
+Opcja 1:
+Organizuj życie z YellowNote. Notatki, listy zadań i projekty w jednym miejscu.
+
+Opcja 2:
+Twoje centrum produktywności. Twórz notatki, listy i projekty łatwo i szybko.
+
+Opcja 3:
+Proste i piękne notatki. Zarządzaj zadaniami i synchronizuj dane w chmurze.
+
+=== PEŁNY OPIS (max 4000 znaków) ===
+Odkryj YellowNote – Twoje nowe centrum produktywności! 🚀
+
+YellowNote to intuicyjna i estetyczna aplikacja, która pomoże Ci zapanować nad chaosem dnia codziennego. Niezależnie od tego, czy planujesz zakupy, pracujesz nad dużym projektem, czy po prostu chcesz zapisać szybką myśl – YellowNote jest dla Ciebie.
+
+Główne funkcje:
+📝 **Notatki i Listy Zadań**
+Twórz rozbudowane notatki tekstowe oraz interaktywne listy kontrolne (checklists). Idealne do robienia listy zakupów, planowania dnia czy zapisywania pomysłów.
+
+📂 **Zarządzanie Projektami**
+Grupuj powiązane notatki i listy w dedykowane Projekty. Dzięki temu zachowasz idealny porządek w swoich sprawach osobistych i zawodowych. Statystyki postępu pozwolą Ci śledzić realizację zadań w każdym projekcie.
+
+☁️ **Synchronizacja w Chmurze**
+Zaloguj się bezpiecznie za pomocą konta Google. Twoje dane są automatycznie synchronizowane z chmurą Firebase, dzięki czemu masz do nich dostęp na każdym urządzeniu Android, na którym się zalogujesz. Nigdy więcej nie martw się o utratę danych przy zmianie telefonu!
+
+🗄️ **Archiwizacja**
+Skończyłeś projekt? Zarchiwizuj go, aby zachować porządek na głównym ekranie, mając jednocześnie pewność, że w każdej chwili możesz do niego wrócić.
+
+🎨 **Nowoczesny Design**
+Ciesz się dopracowanym, minimalistycznym interfejsem w charakterystycznym żółtym motywie, który jest czytelny i przyjemny dla oka. Aplikacja wspiera tryb jasny i ciemny.
+
+🔒 **Prywatność i Bezpieczeństwo**
+Szanujemy Twoją prywatność. Twoje dane są bezpiecznie przechowywane i dostępne tylko dla Ciebie.
+
+Zorganizuj się z YellowNote już dziś! Pobierz aplikację i zacznij działać efektywniej.

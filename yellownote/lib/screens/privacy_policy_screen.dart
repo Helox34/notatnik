@@ -113,8 +113,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
             _buildSection(
               '11. Kontakt',
               'W sprawach dotyczących przetwarzania danych osobowych prosimy o kontakt:\n\n'
-              'Email: privacy@yellownote.app\n'
-              '(Uwaga: To przykładowy adres - należy go zmienić na właściwy)',
+              'Email: yellownotesupport@gmail.com\n'
             ),
             
             const SizedBox(height: 40),

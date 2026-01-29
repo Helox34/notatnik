@@ -1,0 +1,74 @@
+# Polityka Prywatności YellowNote
+Data ostatniej aktualizacji: 20 stycznia 2026
+
+## 1. Informacje ogólne
+Niniejsza Polityka Prywatności określa zasady przetwarzania i ochrony danych osobowych przekazanych przez Użytkowników w związku z korzystaniem z aplikacji YellowNote.
+Administratorem danych osobowych jest właściciel aplikacji YellowNote.
+
+## 2. Zakres zbieranych danych
+W ramach korzystania z aplikacji YellowNote możemy zbierać następujące dane:
+• Dane konta Google (email, imię, zdjęcie profilowe) - w przypadku logowania przez Google
+• Dane utworzone przez Użytkownika (projekty, notatki, listy, wpisy dziennika)
+• Dane techniczne (typ urządzenia, system operacyjny) - w celach technicznych
+• Dane o korzystaniu z aplikacji - w celu poprawy funkcjonalności
+
+## 3. Cel przetwarzania danych
+Dane osobowe są przetwarzane w następujących celach:
+• Świadczenie usług aplikacji YellowNote
+• Synchronizacja danych między urządzeniami
+• Uwierzytelnianie użytkownika
+• Poprawa jakości i funkcjonalności aplikacji
+• Komunikacja z użytkownikiem
+• Wypełnienie obowiązków prawnych
+
+## 4. Podstawa prawna przetwarzania
+Dane osobowe przetwarzane są na podstawie:
+• Zgody użytkownika (art. 6 ust. 1 lit. a RODO)
+• Wykonania umowy o świadczenie usług (art. 6 ust. 1 lit. b RODO)
+• Prawnie uzasadnionego interesu administratora (art. 6 ust. 1 lit. f RODO)
+
+## 5. Przechowywanie danych
+Dane osobowe przechowywane są:
+• Lokalnie na urządzeniu użytkownika
+• W infrastrukturze Firebase (Google Cloud) - w przypadku włączonej synchronizacji
+• Przez okres korzystania z aplikacji i 30 dni po usunięciu konta
+Użytkownik ma możliwość usunięcia wszystkich swoich danych w dowolnym momencie.
+
+## 6. Udostępnianie danych
+Dane osobowe nie są sprzedawane ani udostępniane podmiotom trzecim, za wyjątkiem:
+• Google LLC (Firebase) - w celu synchronizacji danych
+• Sytuacji wymaganych prawem
+Wszystkie podmioty przetwarzające dane zobowiązane są do zachowania poufności.
+
+## 7. Prawa użytkownika
+Zgodnie z RODO użytkownik ma prawo do:
+• Dostępu do swoich danych osobowych
+• Sprostowania (poprawiania) danych
+• Usunięcia danych ("prawo do bycia zapomnianym")
+• Ograniczenia przetwarzania
+• Przenoszenia danych
+• Wniesienia sprzeciwu wobec przetwarzania
+• Cofnięcia zgody w dowolnym momencie
+• Wniesienia skargi do organu nadzorczego (UODO)
+
+## 8. Bezpieczeństwo danych
+Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych:
+• Szyfrowanie transmisji danych (SSL/TLS)
+• Bezpieczne przechowywanie w Firebase
+• Regularne aktualizacje zabezpieczeń
+• Ograniczony dostęp do danych osobowych
+
+## 9. Pliki cookies
+Aplikacja może wykorzystywać technologie śledzące (cookies) w celach:
+• Uwierzytelniania użytkownika
+• Zapamiętywania preferencji
+• Analizy korzystania z aplikacji
+Użytkownik może zarządzać cookies w ustawieniach przeglądarki.
+
+## 10. Zmiany polityki
+Administrator zastrzega sobie prawo do wprowadzania zmian w niniejszej Polityce Prywatności. O wszelkich zmianach użytkownicy będą informowani w aplikacji.
+Dalsze korzystanie z aplikacji po wprowadzeniu zmian oznacza akceptację nowej Polityki Prywatności.
+
+## 11. Kontakt
+W sprawach dotyczących przetwarzania danych osobowych prosimy o kontakt:
+Email: yellownotesupport@gmail.com

@@ -210,7 +210,7 @@ class _ProjectDetailScreenState extends State<ProjectDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 const Text(
-                                  'PostÄ™p zadaĹ„',
+                                  'Postęp zadań',
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w600,
@@ -503,7 +503,7 @@ class _ListTile extends StatelessWidget {
                       style: const TextStyle(fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      '${list.completedCount}/${list.totalCount} ukoĹ„czone',
+                      '${list.completedCount}/${list.totalCount} ukończone',
                       style: TextStyle(fontSize: 12, color: AppColors.darkGray),
                     ),
                   ],

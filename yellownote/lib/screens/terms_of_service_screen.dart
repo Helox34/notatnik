@@ -128,8 +128,7 @@ class TermsOfServiceScreen extends StatelessWidget {
             _buildSection(
               '11. Reklamacje',
               'Reklamacje dotyczące działania Aplikacji można zgłaszać:\n\n'
-              'Email: support@yellownote.app\n'
-              '(Uwaga: To przykładowy adres - należy go zmienić na właściwy)\n\n'
+              'Email: yellownotesupport@gmail.com\n'
               'Reklamacja powinna zawierać:\n\n'
               '• Opis problemu\n'
               '• Data wystąpienia problemu\n'
@@ -160,8 +159,7 @@ class TermsOfServiceScreen extends StatelessWidget {
             _buildSection(
               '14. Kontakt',
               'W sprawach dotyczących Regulaminu prosimy o kontakt:\n\n'
-              'Email: legal@yellownote.app\n'
-              '(Uwaga: To przykładowy adres - należy go zmienić na właściwy)',
+              'Email: yellownotesupport@gmail.com\n',
             ),
             
             const SizedBox(height: 40),
